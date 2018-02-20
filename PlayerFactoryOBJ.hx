@@ -1,4 +1,4 @@
-package js.jStream;
+package jStream;
 
 import haxe.extern.EitherType;
 

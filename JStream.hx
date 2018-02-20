@@ -1,4 +1,4 @@
-package js.jStream;
+package jStream;
 
 import js.Browser.document;
 import js.html.Element;

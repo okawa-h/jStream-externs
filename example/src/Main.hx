@@ -2,8 +2,8 @@ package ;
 
 import js.Browser;
 import js.html.Element;
-import js.jStream.JStream;
-import js.jStream.PlayerFactoryOBJ;
+import jStream.JStream;
+import jStream.PlayerFactoryOBJ;
 
 class Main {
 

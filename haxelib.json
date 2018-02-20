@@ -1,0 +1,10 @@
+{
+	"name": "jStream",
+	"url" : "https://github.com/okawa-h/jStreamAPI-extern/",
+	"license": "MIT",
+	"tags": ["extern", "javascript", "jStream", "js"],
+	"description": "Externs for jStream API",
+	"version": "0.0.1",
+	"releasenote": "🎉first release",
+	"contributors": ["okawa-h"]
+}

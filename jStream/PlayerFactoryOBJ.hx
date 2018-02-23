@@ -56,7 +56,7 @@ typedef SettingInfo = {
 	wp:Int,
 	hp:Int,
 	?rp:Responsive,
-	?dq:Int,
+	?dq:DefaultQuality,
 	?pb:Availability,
 	?wm:Availability,
 	?wd:WaterMarkDesign,

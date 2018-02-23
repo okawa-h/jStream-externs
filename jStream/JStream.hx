@@ -10,6 +10,7 @@ class JStream {
 	public var CONTACT_ID:String;
 	public var FILE_NO   :String;
 	public var BASE_URL  :String;
+	public var isInitAPI :Bool = false;
 
 	public function new(uniqueId:String,contactId:String,fileNo:String) {
 
@@ -20,11 +21,14 @@ class JStream {
 
 	}
 
-	public function load(?onAPIReady:Void->Void) {
+	public function loadAPI(?onAPIReady:Void->Void) {
 
 		var firstElement:Element = document.getElementsByTagName('script')[0];
 		var script:ScriptElement = document.createScriptElement();
-		script.onload = onAPIReady;
+		script.onload = function() {
+			isInitAPI = true;
+			if (onAPIReady != null) onAPIReady();
+		};
 		script.src = 'https://ssl-cache.stream.ne.jp/www' + FILE_NO + '/' + UNIQUE_ID + '/jmc_pub/jmc_swf/player/t3/obj.js';
 		firstElement.parentNode.insertBefore(script,firstElement);
 

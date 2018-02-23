@@ -20,19 +20,26 @@ Main.init = function() {
 			console.log(info2);
 		});
 	};
-	jstream.load(onAPIReady);
+	jstream.loadAPI(onAPIReady);
 };
 var jStream_JStream = function(uniqueId,contactId,fileNo) {
+	this.isInitAPI = false;
 	this.UNIQUE_ID = uniqueId;
 	this.CONTACT_ID = contactId;
 	this.FILE_NO = fileNo;
 	this.BASE_URL = this.UNIQUE_ID + ".eq.webcdn.stream.ne.jp/www" + this.FILE_NO + "/" + this.UNIQUE_ID + "/jmc_pub/jmc_swf/player/";
 };
 jStream_JStream.prototype = {
-	load: function(onAPIReady) {
+	loadAPI: function(onAPIReady) {
+		var _gthis = this;
 		var firstElement = window.document.getElementsByTagName("script")[0];
 		var script = window.document.createElement("script");
-		script.onload = onAPIReady;
+		script.onload = function() {
+			_gthis.isInitAPI = true;
+			if(onAPIReady != null) {
+				onAPIReady();
+			}
+		};
 		script.src = "https://ssl-cache.stream.ne.jp/www" + this.FILE_NO + "/" + this.UNIQUE_ID + "/jmc_pub/jmc_swf/player/t3/obj.js";
 		firstElement.parentNode.insertBefore(script,firstElement);
 	}

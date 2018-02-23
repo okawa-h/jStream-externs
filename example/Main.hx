@@ -42,7 +42,7 @@ class Main {
 
 		}
 
-		jstream.load(onAPIReady);
+		jstream.loadAPI(onAPIReady);
 
 	}
 

@@ -15,8 +15,8 @@ class Main {
 
 	private static function init():Void {
 
-		var target :Element = Browser.document.getElementById('video');
-		var jstream:JStream = new JStream('eqz989uscl','NDk2','50');
+		var target:Element = Browser.document.getElementById('video');
+		var jstream:JStream = new JStream('eqz989uscl', 'NDk2', '50');
 
 		function onAPIReady() {
 
@@ -27,16 +27,16 @@ class Main {
 				s:{ wp:640,hp:480,sn:SNS.list([google,twitter]) }
 			},target.id);
 
-			player.accessor.addEventListener(EventType.landing,function(info:Event) {
+			player.accessor.addEventListener(EventType.landing, function(info:Event) {
 				trace(player.flashVars.thumbnail_url);
 				trace(info);
 			});
 
-			player.accessor.addEventListener(EventType.change_state,function(info:Event) {
+			player.accessor.addEventListener(EventType.change_state, function(info:Event) {
 				trace(info);
 			});
 
-			player.accessor.addEventListener(EventType.error,function(info:ErrorEvent) {
+			player.accessor.addEventListener(EventType.error, function(info:ErrorEvent) {
 				trace(info);
 			});
 
